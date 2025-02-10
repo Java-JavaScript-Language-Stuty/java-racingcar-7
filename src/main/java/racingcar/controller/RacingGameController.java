@@ -4,6 +4,8 @@ import racingcar.model.RacingGame;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
+import java.util.Arrays;
+
 public class RacingGameController {
     private final InputView inputView;
     private final OutputView outputView;
@@ -16,6 +18,6 @@ public class RacingGameController {
     }
 
     public void run() {
-
+        String names=inputView.getCarNames();
     }
 }
