@@ -26,4 +26,8 @@ public class OutputView {
                         + String.join(SEPARATOR, names)
         );
     }
+
+    public void newLine() {
+        System.out.println();
+    }
 }
