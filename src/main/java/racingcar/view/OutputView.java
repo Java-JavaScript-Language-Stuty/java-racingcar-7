@@ -14,9 +14,9 @@ public class OutputView {
 
     public void printPlayerResult(List<CarMovementDto> playerResult) {
         playerResult.forEach((result) ->
-                System.out.printf(
+                System.out.println(String.format(
                         MessageConstants.OUTPUT_CAR_MOVEMENT.getMessage(), result.getName()
-                                + MOVEMENT_DELIMITER.repeat(result.getMovement()))
+                ) + MOVEMENT_DELIMITER.repeat(result.getMovement()))
         );
     }
 
