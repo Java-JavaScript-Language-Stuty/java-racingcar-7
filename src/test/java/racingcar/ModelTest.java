@@ -8,8 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import racingcar.model.Race;
 import racingcar.model.dto.CarMovementDto;
-import racingcar.model.dto.Race;
 
 public class ModelTest {
     private MockRandomProvider mockRandomProvider;
@@ -47,9 +47,7 @@ public class ModelTest {
         @DisplayName("이동 테스트")
         public void movementTest() {
             Race race = Race.init(List.of("pobi", "woni", "jun"));
-            IntStream.range(0, 5).forEach(i -> {
-                race.advance(mockRandomProvider::mockingRandom);
-            });
+            IntStream.range(0, 5).forEach(i -> race.advance(mockRandomProvider::mockingRandom));
             assertEquals(5, race.getTurn());
             assertEquals(
                     List.of(

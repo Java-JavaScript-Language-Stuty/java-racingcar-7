@@ -3,8 +3,8 @@ package racingcar.service;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
+import racingcar.model.Race;
 import racingcar.model.dto.CarMovementDto;
-import racingcar.model.dto.Race;
 
 public class CarControlService {
     private Race race;

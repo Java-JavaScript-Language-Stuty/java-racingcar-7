@@ -1,4 +1,6 @@
-package racingcar.model.dto;
+package racingcar.model;
+
+import racingcar.model.dto.CarMovementDto;
 
 public class Car {
     private final String name;

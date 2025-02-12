@@ -1,9 +1,10 @@
-package racingcar.model.dto;
+package racingcar.model;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Supplier;
+import racingcar.model.dto.CarMovementDto;
 
 public class Race {
     private int turn;
@@ -35,12 +36,12 @@ public class Race {
 
     public List<String> getWinner() {
         int maxValue = cars.stream()
-                .map(car -> car.getData().getMovement())
+                .map(car -> car.getData().movement())
                 .max(Comparator.naturalOrder()).orElse(0);
 
         return cars.stream()
-                .filter(car -> car.getData().getMovement() == maxValue)
-                .map(car -> car.getData().getName())
+                .filter(car -> car.getData().movement() == maxValue)
+                .map(car -> car.getData().name())
                 .toList();
     }
 
