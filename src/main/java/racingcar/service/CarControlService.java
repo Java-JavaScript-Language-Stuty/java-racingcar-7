@@ -12,6 +12,7 @@ public class CarControlService {
 
     private static final int MIN_CHAR_LENGTH = 1;
     private static final int MAX_CHAR_LENGTH = 5;
+    private static final String COMMA = ",";
 
     public void initialize(String names) {
         List<String> nameList = parseNames(names);
@@ -20,7 +21,7 @@ public class CarControlService {
     }
 
     private List<String> parseNames(String names) {
-        return Arrays.stream(names.trim().split(",")).toList();
+        return Arrays.stream(names.trim().split(COMMA)).toList();
     }
 
     public List<CarMovementDto> playTurn(Supplier<Boolean> movementFunction) {
