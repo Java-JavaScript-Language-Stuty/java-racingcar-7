@@ -19,5 +19,13 @@ public class RacingGameController {
 
     public void run() {
         String names=inputView.getCarNames();
+        int rounds=inputView.getRoundCount();
+        racingGame.CarNames(names);
+
+        for(int i=0;i<rounds;i++) {
+            racingGame.moveCars();
+            outputView.printRace(racingGame.getResults());
+        }
+        outputView.printWinners(racingGame.getWinner());
     }
 }
