@@ -5,6 +5,7 @@ import java.util.stream.IntStream;
 import racingcar.model.dto.CarMovementDto;
 import racingcar.service.CarControlService;
 import racingcar.service.RandomService;
+import racingcar.utils.Validator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -33,6 +34,7 @@ public class RacingcarController {
     private void initialize() {
         String names = inputView.getCarName();
         trials = inputView.getTrialNumber();
+        Validator.naturalNumberCheck(trials);
         carControlService.initialize(names);
         outputView.newLine();
     }
