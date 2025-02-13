@@ -10,23 +10,24 @@ public class RaceView {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         return Console.readLine();
     }
-    public static int inputTimes() {
+    public static String inputTimes() {
         System.out.println("시도할 회수는 몇회인가요?");
-        String t = Console.readLine();
-
-        if (Integer.parseInt(t) > 0) return Integer.parseInt(t);
-
-        throw new IllegalArgumentException();
+        return Console.readLine();
     }
 
     public static void interimTally(List<Car> c) {
         for (Car car : c ) {
             car.forward();
-        }
-        for (Car car : c ) {
             car.printResult();
         }
         System.out.println();
+    }
+
+    public static void outputResult(int t) {
+        System.out.println("실행 결과");
+        for (int i = 0; i < t; i++) {
+            RaceView.interimTally(Car.cars);
+        }
     }
 
     public static void outputWinner(String winner) {
