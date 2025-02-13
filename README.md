@@ -78,9 +78,12 @@
 ### Service
     - sliceName()
     - getWinner()
+    - checkInput()
 ### View
     - input()
+    - inputTimes()
     - interimTally()
+    - outputResult()
     - output()
 ### Controller
     - startRace()
