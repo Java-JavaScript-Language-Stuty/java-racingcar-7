@@ -12,7 +12,7 @@ public class RacingGameView implements CarObserver {
     }
 
     public String readRepeat(){
-        System.out.println(SystemMessage.START_REPEAT_GUIDE.getMessage(););
+        System.out.println(SystemMessage.START_REPEAT_GUIDE.getMessage());
         return Console.readLine();
     }
 

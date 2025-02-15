@@ -17,7 +17,7 @@ public class Car {
     }
 
     public void setName(String name) {
-        if(name.length()>5) throw new IllegalArgumentException(ErrorMessage.TOOLONG.getMessage());
+        if(name.length()>5) throw new IllegalArgumentException(ErrorMessage.TOO_LONG.getMessage());
         this.name = name;
     }
 

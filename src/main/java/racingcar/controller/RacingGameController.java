@@ -1,9 +1,9 @@
 package racingcar.controller;
 
 import racingcar.service.RacingGameService;
+import racingcar.util.ErrorMessage;
+import racingcar.util.Validator;
 import racingcar.view.RacingGameView;
-
-import java.util.List;
 
 public class RacingGameController {
 
@@ -22,7 +22,11 @@ public class RacingGameController {
     }
 
     public void runGame(){
-        int repetitionNumber = Integer.parseInt(racingGameView.readRepeat());
+        String input = racingGameView.readRepeat();
+        if(!Validator.isNumber(input)) throw new IllegalArgumentException(ErrorMessage.WRONG_REPEAT_INPUT.getMessage());
+
+        int repetitionNumber = Integer.parseInt(input);
+        if(repetitionNumber<1)
         racingGameView.printEndGuide();
         for (int i=0;i<repetitionNumber;i++) {
             racingGameService.playOneGame();
